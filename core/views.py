@@ -7,6 +7,7 @@ from django.shortcuts import render, redirect
 from product.models import Product, Category
 
 from .forms import SignUpForm
+from django.shortcuts import render,HttpResponse
 
 def frontpage(request):
     products = Product.objects.all()[0:8]
@@ -66,3 +67,6 @@ def shop(request):
     }
 
     return render(request, 'core/shop.html', context)
+
+    def index(request):
+        return HttpResponse("this is index page")
